@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZiggyZag Clone</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Bangers', cursive;
+      overflow-x: hidden;
+      color: yellow;
+      background: #000;
+    }
+
+    /* Video background */
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Top Nav */
+    .nav {
+      position: fixed;
+      top: 15px;
+      left: 20px;
+      display: flex;
+      gap: 20px;
+      font-size: 22px;
+      z-index: 100;
+    }
+    .nav a {
+      text-decoration: none;
+      color: black;
+      background: yellow;
+      padding: 6px 14px;
+      border-radius: 4px;
+      transition: transform 0.2s ease;
+    }
+    .nav a:hover { transform: scale(1.1); }
+
+    /* Social Icons */
+    .social {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 18px;
+      font-size: 24px;
+      z-index: 100;
+    }
+    .social a {
+      color: white;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .social a:hover {
+      transform: scale(1.2);
+      color: yellow;
+    }
+
+    /* Center Text */
+    .hero {
+      text-align: center;
+      margin-top: 22vh;
+      position: relative;
+      z-index: 10;
+    }
+    .hero h1 {
+      font-size: 110px;
+      margin: 0;
+      color: yellow;
+      letter-spacing: 2px;
+      text-shadow: 3px 3px 12px rgba(0,0,0,0.8);
+    }
+    .hero p {
+      font-size: 32px;
+      font-style: italic;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    /* Fruits as stickers */
+    .fruit {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      z-index: 5;
+      animation: float 6s ease-in-out infinite;
+    }
+    /* floating effect */
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(var(--rot)); }
+      50% { transform: translateY(-20px) rotate(var(--rot)); }
+    }
+
+    /* Random placements with rotation */
+    .f1 { top: 18%; left: 5%; --rot: -15deg; }
+    .f2 { top: 10%; left: 25%; --rot: 10deg; }
+    .f3 { top: 15%; right: 20%; --rot: 20deg; }
+    .f4 { top: 28%; right: 5%; --rot: -20deg; }
+    .f5 { top: 38%; left: 12%; --rot: 15deg; }
+    .f6 { top: 45%; right: 15%; --rot: -10deg; }
+    .f7 { top: 50%; left: 4%; --rot: 8deg; }
+    .f8 { top: 55%; right: 8%; --rot: -18deg; }
+    .f9 { top: 62%; left: 22%; --rot: 12deg; }
+    .f10 { top: 67%; right: 25%; --rot: -12deg; }
+    .f11 { bottom: 26%; left: 15%; --rot: 15deg; }
+    .f12 { bottom: 22%; right: 18%; --rot: -14deg; }
+    .f13 { bottom: 16%; left: 30%; --rot: 10deg; }
+    .f14 { bottom: 12%; right: 12%; --rot: -10deg; }
+    .f15 { bottom: 6%; left: 46%; --rot: 20deg; }
+
+    /* Footer Section */
+    footer {
+      position: relative;
+      margin-top: 70vh;
+      background: rgba(0,0,0,0.65);
+      color: #eee;
+      text-align: center;
+      padding: 25px 20px;
+      z-index: 20;
+      font-size: 16px;
+    }
+    footer .links {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    footer .links a {
+      color: yellow;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="209898_small.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Nav -->
+  <div class="nav">
+    <a href="#">HOME</a>
+    <a href="#">SUBSCRIBE</a>
+  </div>
+
+  <!-- Social -->
+  <div class="social">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>BHANG BAR</h1>
+    <p>Nature's Sweetness, Bottled for You</p>
+  </div>
+
+  <!-- Fruits Stickers -->
+  <img src="apple-fruit.png" class="fruit f1">
+  <img src="banana.png" class="fruit f2">
+  <img src="grape-fruit.png" class="fruit f3">
+  <img src="watermelon (1).png" class="fruit f4">
+  <img src="apple.png" class="fruit f5">
+  <img src="kiwi.png" class="fruit f6">
+  <img src="pineapple.png" class="fruit f7">
+  <img src="pomegranate.png" class="fruit f8">
+  <img src="strawberry.png" class="fruit f9">
+  <img src="watermelon (2).png" class="fruit f10">
+  <img src="pineapple (1).png" class="fruit f11">
+  <img src="pear.png" class="fruit f12">
+  <img src="cow.png" class="fruit f13">
+  <img src="cherry.png" class="fruit f14">
+  <img src="lemon.png" class="fruit f15">
+
+  <!-- Footer -->
+  <footer>
+    © 2025 BHANG BAR | Juice 
+    <div class="links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
